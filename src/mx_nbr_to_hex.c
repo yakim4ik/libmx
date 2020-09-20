@@ -10,7 +10,7 @@ char *mx_nbr_to_hex(unsigned long ngr) {
     result = malloc(count);
     for(int i = 0; i <= count; i++)
         result[i] = '\0';
-    for(temp = ngr;temp > 0; temp = temp / 16) {
+    for(temp = ngr; temp > 0; temp = temp / 16) {
         count--;
         if (temp % 16 > 9)
             result[count] = temp % 16 + 87;

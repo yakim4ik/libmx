@@ -156,9 +156,8 @@ int main(/*int argc, char *argv[]*/) {
     //     mx_printstr("mx_strdup returns \"123456789\"? | "); mx_printstr(strdup1); mx_printstr("\n");
 
     // mx_printstr("\n\n----------------MX_STRNDUP-------------------\n");
-    //     char *strndup = mx_strndup("hello", 20);
-    //     mx_printstr("mx_strndup returns \"hello\"? | "); mx_printstr(strndup); mx_printstr("\n");
-
+    //     char *strndup_v = mx_strndup("hello", 6);
+    //     mx_printstr("mx_strndup returns \"hello\"? | "); mx_printstr(strndup_v); mx_printstr("\n");
 
     // mx_printstr("\n\n----------------MX_STRCPY-------------------\n");
     //     const char *strcpy = "123456789"; char dstcpy[15];
@@ -251,29 +250,29 @@ int main(/*int argc, char *argv[]*/) {
     //     mx_printstr("mx_strjoin returns \"dodge \"? | "); mx_printstr(strjoin_result3); mx_printstr("\n");
     //     mx_printstr("mx_strjoin returns \"(null)\"? | "); printf("%s\n", strjoin_result4);
 
-    // // mx_printstr("\n\n----------------MX_FILE_TO_STR-------------------\n"); // HOW TO CHECK??????????
-    // //     mx_printstr("check function with ./a.out src/mx_strlen.c\n");
-    // //     if (argc > 1) {
-    // //         char *file_to_str = mx_file_to_str(argv[1]);
-    // //         mx_printstr(file_to_str);
-    // //     }
+    // mx_printstr("\n\n----------------MX_FILE_TO_STR-------------------\n"); // HOW TO CHECK??????????
+    //     mx_printstr("check function with ./a.out src/mx_strlen.c\n");
+    //     if (argc > 1) {
+    //         char *file_to_str = mx_file_to_str(argv[1]);
+    //         mx_printstr(file_to_str);
+    //     }
 
     // mx_printstr("\n\n----------------MX_READ_LINE-------------------\n"); // CORRECT IT !!!!!!
 
 
-    // mx_printstr("\n\n----------------MX_REPLACE_SUBSTR-------------------\n");
-    //     char replace_substr1[] = "McDonalds";
-    //     char replace_substr2[] = "Ururu turu";
-    //     char *repleced1 = mx_replace_substr(replace_substr1, "alds", "uts");
-    //     char *repleced2 = mx_replace_substr(replace_substr2, "ru", "ta");
-    //     char *repleced3 = mx_replace_substr(replace_substr2, NULL, "ta");
-    //     char *repleced4 = mx_replace_substr(NULL, "ru", "ta");
-    //     char *repleced5 = mx_replace_substr(replace_substr2, "ru", NULL);
-    //     mx_printstr("mx_replace_substr returns \"McDonuts\"? | "); mx_printstr(repleced1); mx_printstr("\n");
-    //     mx_printstr("mx_replace_substr returns \"Utata tuta\"? | "); mx_printstr(repleced2); mx_printstr("\n");
-    //     mx_printstr("mx_replace_substr returns \"(null)\"? | "); printf("%s\n", repleced3);
-    //     mx_printstr("mx_replace_substr returns \"(null)\"? | "); printf("%s\n", repleced4);
-    //     mx_printstr("mx_replace_substr returns \"(null)\"? | "); printf("%s\n", repleced5);
+    mx_printstr("\n\n----------------MX_REPLACE_SUBSTR-------------------\n");
+        char replace_substr1[] = "McDonalds";
+        char replace_substr2[] = "Ururu turu";
+        char *repleced1 = mx_replace_substr(replace_substr1, "alds", "uts");
+        char *repleced2 = mx_replace_substr(replace_substr2, "ru", "ta");
+        char *repleced3 = mx_replace_substr(replace_substr2, NULL, "ta");
+        char *repleced4 = mx_replace_substr(NULL, "ru", "ta");
+        char *repleced5 = mx_replace_substr(replace_substr2, "ru", NULL);
+        mx_printstr("mx_replace_substr returns \"McDonuts\"? | "); mx_printstr(repleced1); mx_printstr("\n");
+        mx_printstr("mx_replace_substr returns \"Utata tuta\"? | "); mx_printstr(repleced2); mx_printstr("\n");
+        mx_printstr("mx_replace_substr returns \"(null)\"? | "); printf("%s\n", repleced3);
+        mx_printstr("mx_replace_substr returns \"(null)\"? | "); printf("%s\n", repleced4);
+        mx_printstr("mx_replace_substr returns \"(null)\"? | "); printf("%s\n", repleced5);
 
     //     // char *str = "123456789\n";
     //     // mx_printstr(str);
@@ -413,6 +412,6 @@ int main(/*int argc, char *argv[]*/) {
 
 
 
-    // system("leaks -q a.out");
+    system("leaks -q a.out");
 }
 
