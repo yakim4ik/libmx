@@ -18,8 +18,8 @@ int mx_quicksort(char **arr, int left, int right) {
     if (!arr)
         return -1;
     if (i < j) {
-        for ( ; mx_strlen(arr[i]) < mx_strlen(arr[pivot]); i++);
-        for ( ; mx_strlen(arr[j]) > mx_strlen(arr[pivot]); j--);
+        for ( ;mx_strlen(arr[i]) < mx_strlen(arr[pivot]); i++);
+        for ( ;mx_strlen(arr[j]) > mx_strlen(arr[pivot]); j--);
         if (i < j && mx_strlen(arr[i]) != mx_strlen(arr[j]))
             mx_swap(arr, i, j, &swap);
         ++i < right ? swap += mx_quicksort(arr, i, right) : i;

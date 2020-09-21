@@ -5,7 +5,7 @@ int mx_list_size(t_list *list) {
     int count = 0;
 
     if (list != NULL)
-        for(count = 0; buff->next; count++)
+        for(count = 0; buff != NULL; count++)
             buff = buff->next;
     return count;
 }

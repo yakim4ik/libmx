@@ -7,9 +7,10 @@ char *mx_nbr_to_hex(unsigned long ngr) {
 
     for(temp = ngr; temp > 0; temp /= 16)
         count++;
-    result = malloc(count);
-    for(int i = 0; i <= count; i++)
-        result[i] = '\0';
+    result = mx_strnew(count);
+    // malloc(count);
+    // for(int i = 0; i <= count; i++)
+    //     result[i] = '\0';
     for(temp = ngr; temp > 0; temp = temp / 16) {
         count--;
         if (temp % 16 > 9)

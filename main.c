@@ -48,11 +48,11 @@ int main(/*int argc, char *argv[]*/) {
     //     mx_printstr("mx_sqrt 625 is 25? | "); mx_printint(mx_sqrt(625)); mx_printstr("\n");
     //     mx_printstr("mx_sqrt 2147395600 is 46340? | "); mx_printint(mx_sqrt(2147395600)); mx_printstr("\n");
 
-    // mx_printstr("\n\n----------------MX_NBR_TO_HEX-------------------\n");
-    //     char *hex1 = mx_nbr_to_hex(52);
-    //     char *hex2 = mx_nbr_to_hex(1000);
-    //     mx_printstr("mx_nbr_to_hex of 52 is 34? | "); mx_printstr(hex1); mx_printstr("\n");
-    //     mx_printstr("mx_nbr_to_hex of 1000 is 3e8? | "); mx_printstr(hex2); mx_printstr("\n");
+    mx_printstr("\n\n----------------MX_NBR_TO_HEX-------------------\n");
+        char *hex1 = mx_nbr_to_hex(52);
+        char *hex2 = mx_nbr_to_hex(1000);
+        mx_printstr("mx_nbr_to_hex of 52 is 34? | "); mx_printstr(hex1); mx_printstr("\n");
+        mx_printstr("mx_nbr_to_hex of 1000 is 3e8? | "); mx_printstr(hex2); mx_printstr("\n");
 
 
     // mx_printstr("\n\n----------------MX_HEX_TO_NBR-------------------\n");
@@ -260,19 +260,19 @@ int main(/*int argc, char *argv[]*/) {
     // mx_printstr("\n\n----------------MX_READ_LINE-------------------\n"); // CORRECT IT !!!!!!
 
 
-    mx_printstr("\n\n----------------MX_REPLACE_SUBSTR-------------------\n");
-        char replace_substr1[] = "McDonalds";
-        char replace_substr2[] = "Ururu turu";
-        char *repleced1 = mx_replace_substr(replace_substr1, "alds", "uts");
-        char *repleced2 = mx_replace_substr(replace_substr2, "ru", "ta");
-        char *repleced3 = mx_replace_substr(replace_substr2, NULL, "ta");
-        char *repleced4 = mx_replace_substr(NULL, "ru", "ta");
-        char *repleced5 = mx_replace_substr(replace_substr2, "ru", NULL);
-        mx_printstr("mx_replace_substr returns \"McDonuts\"? | "); mx_printstr(repleced1); mx_printstr("\n");
-        mx_printstr("mx_replace_substr returns \"Utata tuta\"? | "); mx_printstr(repleced2); mx_printstr("\n");
-        mx_printstr("mx_replace_substr returns \"(null)\"? | "); printf("%s\n", repleced3);
-        mx_printstr("mx_replace_substr returns \"(null)\"? | "); printf("%s\n", repleced4);
-        mx_printstr("mx_replace_substr returns \"(null)\"? | "); printf("%s\n", repleced5);
+    // mx_printstr("\n\n----------------MX_REPLACE_SUBSTR-------------------\n");
+    //     char replace_substr1[] = "McDonalds";
+    //     char replace_substr2[] = "Ururu turu";
+    //     char *repleced1 = mx_replace_substr(replace_substr1, "alds", "uts");
+    //     char *repleced2 = mx_replace_substr(replace_substr2, "ru", "ta");
+    //     char *repleced3 = mx_replace_substr(replace_substr2, NULL, "ta");
+    //     char *repleced4 = mx_replace_substr(NULL, "ru", "ta");
+    //     char *repleced5 = mx_replace_substr(replace_substr2, "ru", NULL);
+    //     mx_printstr("mx_replace_substr returns \"McDonuts\"? | "); mx_printstr(repleced1); mx_printstr("\n");
+    //     mx_printstr("mx_replace_substr returns \"Utata tuta\"? | "); mx_printstr(repleced2); mx_printstr("\n");
+    //     mx_printstr("mx_replace_substr returns \"(null)\"? | "); printf("%s\n", repleced3);
+    //     mx_printstr("mx_replace_substr returns \"(null)\"? | "); printf("%s\n", repleced4);
+    //     mx_printstr("mx_replace_substr returns \"(null)\"? | "); printf("%s\n", repleced5);
 
     //     // char *str = "123456789\n";
     //     // mx_printstr(str);
@@ -288,6 +288,177 @@ int main(/*int argc, char *argv[]*/) {
 
 
     // mx_printstr(" *************************************\n *\t      MEMORY PACK\t     *\n *************************************\n\n");
+
+    mx_printstr(" *************************************\n *\t      MEMORY PACK\t     *\n *************************************\n");
+    // mx_printstr("\n----------------MX_MEMSET-------------------\n");
+    //     char memset1[13]= "1234567890";
+    //     char memset2[13]= "1234567890";
+    //     mx_printstr("memset    return\t   | "); 
+    //     mx_printstr(memset(memset1, 'a', 5));
+    //     mx_printstr("|\nmx_memset return the same? | "); 
+    //     mx_printstr(mx_memset (memset2, 'a', 5)); mx_printstr("|\n");
+
+    // mx_printstr("\n----------------MX_MEMCPY-------------------\n");
+    //     char memcpy_dest1[11] = "1234567890";
+    //     char memcpy_dest2[11] = "1234567890";
+    //     char *memcpy_src = "54321";
+    //     mx_printstr("memcpy    return\t   | "); mx_printstr(memcpy(memcpy_dest1, memcpy_src, 5));
+    //     mx_printstr("|\nmx_memcpy return the same? | "); mx_printstr(mx_memcpy(memcpy_dest2, memcpy_src, 5)); mx_printstr("|\n");
+
+    // mx_printstr("\n----------------MX_MEMCCPY-------------------\n");
+    //     char memccpy_dest1[10] = "123456789";
+    //     char memccpy_dest2[10] = "123456789";
+    //     mx_printstr("memccpy    return\t    | "); mx_printstr(memccpy(memccpy_dest1, "54321", '3', 8));
+    //     mx_printstr("|\nmx_memccpy return the same? | "); mx_printstr(mx_memccpy(memccpy_dest2, "54321", '3', 8)); mx_printstr("|\n");
+    //     printf("dst after memccpy    is | %s|\ndst after mx_memccpy is | %s|\n", memccpy_dest1, memccpy_dest2);
+    //     printf("memccpy    return\t    | %s|\n", memccpy(memccpy_dest1, "54321", 'a', 8));
+    //     printf("mx_memccpy return the same? | %s|\n", mx_memccpy(memccpy_dest2, "54321", 'a', 8));
+
+    // mx_printstr("\n----------------MX_MEMCMP-------------------\n");
+    //     char *memcmp1 = "aaaaa"; 
+    //     char *memcmp2 = "aaaaA"; 
+    //     char *memcmp3 = "aaaaaaa";
+    //     mx_printstr("memcmp \t  return   \t   | "); mx_printint(memcmp(memcmp2, memcmp1, 5));
+    //     mx_printstr("|\nmx_memcmp return the same? | "); mx_printint(mx_memcmp(memcmp2, memcmp1, 5)); mx_printstr("|\n");
+    //     mx_printstr("memcmp \t  return   \t   | "); mx_printint(memcmp(memcmp1, memcmp2, 5));
+    //     mx_printstr("|\nmx_memcmp return the same? | "); mx_printint(mx_memcmp(memcmp1, memcmp2, 5)); mx_printstr("|\n");
+    //     mx_printstr("memcmp \t  return   \t   | "); mx_printint(memcmp(memcmp1, memcmp3, 5));
+    //     mx_printstr("|\nmx_memcmp return the same? | "); mx_printint(mx_memcmp(memcmp1, memcmp3, 5)); mx_printstr("|\n");
+
+    // mx_printstr("\n----------------MX_MEMCHR-------------------\n");
+    //     unsigned char memchr1[11] = "1234567890";
+    //     printf("memchr    return  | %s|\n", memchr(memchr1, '5', 10));
+    //     printf("mx_memchr return  | %s|\n", mx_memchr(memchr1, '5', 10));
+    //     unsigned char memchr2[11] = "1234567890";
+    //     printf("memchr    return  | %s|\n", memchr(memchr2, 'x', 10));
+    //     printf("mx_memchr return  | %s|\n", mx_memchr(memchr2, 'x', 10));
+    //     unsigned char *memchr3 = NULL;
+    //     printf("memchr    return  | %s|\n", memchr(memchr3, '6', 0));
+    //     printf("mx_memchr return  | %s|\n", mx_memchr(memchr3, '6', 0));
+
+    // mx_printstr("\n----------------MX_MEMRCHR-------------------\n");
+    //     unsigned char memrchr1[11] = "1234567890";
+    //     printf("mx_memrchr return 567890 | %s|\n", mx_memrchr(memrchr1, '5', 10));
+    //     unsigned char memrchr2[11] = "1234567890";
+    //     printf("mx_memrchr return (null) | %s|\n", mx_memrchr(memrchr2, 'x', 10));
+    //     unsigned char *memrchr3 = NULL;
+    //     printf("mx_memrchr return (null) | %s|\n", mx_memrchr(memrchr3, '6', 0));
+
+    // mx_printstr("\n----------------MX_MEMMEM-------------------\n");
+    //     unsigned char memmem_big1[10] = "Hello Neo";
+    //     unsigned char memmem_little1[4] = "Neo";
+    //     size_t big_len1 = 10;
+    //     size_t little_len1 = 4;
+    //     printf("memmem    return  |%s|\n", memmem(memmem_big1, big_len1, memmem_little1, little_len1));
+    //     printf("mx_memmem return  |%s|\n", mx_memmem(memmem_big1, big_len1, memmem_little1, little_len1));
+    //     unsigned char *memmem_big2 = NULL;
+    //     unsigned char memmem_little2[4] = "Neo";
+    //     size_t big_len2 = 0;
+    //     size_t little_len2 = 4;
+    //     printf("memmem    return  |%s|\n", memmem(memmem_big2, big_len2, memmem_little2, little_len2));
+    //     printf("mx_memmem return  |%s|\n", mx_memmem(memmem_big2, big_len2, memmem_little2, little_len2));
+    //     size_t big_len3 = 10;
+    //     size_t little_len3 = 0;
+    //     printf("memmem    return  |%s|\n", memmem(NULL, big_len3, NULL, little_len3));
+    //     printf("mx_memmem return  |%s|\n", mx_memmem(NULL, big_len3, NULL, little_len3));
+    //     unsigned char memmem_big4[10] = "Hello Neo";
+    //     unsigned char memmem_little4[4] = "XAH";
+    //     size_t big_len4 = 10;
+    //     size_t little_len4 = 4;
+    //     printf("memmem    return  |%s|\n", memmem(memmem_big4, big_len4, memmem_little4, little_len4));
+    //     printf("mx_memmem return  |%s|\n", mx_memmem(memmem_big4, big_len4, memmem_little4, little_len4));
+
+    // mx_printstr("\n----------------MX_MEMMOVE-------------------\n");
+    //     char src1[] = "******************************";
+    //     char dest1[] = "abcdefghijklmnopqrstuvwxyz0123456789";
+    //     memmove(dest1, src1, 26);
+    //     printf("memmove    return |%s|\n",dest1);
+    //     char src2[] = "******************************";
+    //     char dest2[] = "abcdefghijklmnopqrstuvwxyz0123456789";
+    //     mx_memmove(dest2, src2, 26);
+    //     printf("mx_memmove return |%s|\n",dest2);
+
+    //     char src3[] = "******************************";
+    //     char *dest3 = NULL;
+    //     memmove(dest3, src3, 0);
+    //     printf("memmove    return |%s|\n",dest3);
+    //     char src4[] = "******************************";
+    //     char *dest4 = NULL;
+    //     mx_memmove(dest4, src4, 0);
+    //     printf("mx_memmove return |%s|\n",dest4);
+
+    //     char *src5 = NULL;
+    //     char dest5[] = "abcdefghijklmnopqrstuvwxyz0123456789";
+    //     memmove(dest5, src5, 0);
+    //     printf("memmove    return |%s|\n", dest5);
+    //     char *src6 = NULL;
+    //     char dest6[] = "abcdefghijklmnopqrstuvwxyz0123456789";
+    //     mx_memmove(dest6, src6,0);
+    //     printf("mx_memmove return |%s|\n", dest6);
+
+    mx_printstr("\n----------------MX_REALLOC-------------------\n");
+        char *ptr1 = NULL;
+        ptr1 = (char *) malloc(17);
+        strcpy(ptr1, "This is 16 chars");
+        printf("Ptr1 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr1, (long int)ptr1);
+        ptr1 = realloc(ptr1, 10);
+        printf("Ptr1 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr1, (long int)ptr1);
+        char *ptr2 = NULL;
+        ptr2 = (char *) malloc(17);
+        strcpy(ptr2, "This is 16 chars");
+        printf("Ptr2 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n", ptr2, (long int)ptr2);
+        ptr2 = mx_realloc(ptr2, 10);
+        printf("Ptr2 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n\n", ptr2, (long int)ptr2);
+        char *ptr3 = NULL;
+        ptr3 = (char *) malloc(10);
+        strcpy(ptr3, "123456789");
+        printf("Ptr3 result after use LIBC realloc:  |%s| \t\t\t    Pointer address|%lu|\n", ptr3, (long int)ptr3);
+        ptr3 = realloc(ptr3, 34);
+        mx_strcat(ptr3, "+Added 25 more characters");
+        printf("Ptr3 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr3, (long int)ptr3);
+        char *ptr4 = NULL;
+        ptr4 = (char *) malloc(10);
+        strcpy(ptr4, "123456789");
+        printf("Ptr4 result after use MY mx_realloc: |%s| \t\t\t    Pointer address|%lu|\n", ptr4, (long int)ptr4);
+        ptr4 = mx_realloc(ptr4, 34);
+        mx_strcat(ptr4, "+Added 25 more characters");
+        printf("Ptr4 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n\n", ptr4, (long int)ptr4);
+        char *ptr5 = NULL;
+        ptr5 = (char *) malloc(10);
+        printf("Ptr5 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr5, (long int)ptr5);
+        ptr5 = realloc(ptr5, 17);
+        printf("Ptr5 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr5, (long int)ptr5);
+        char *ptr6 = NULL;
+        ptr6 = (char *) malloc(10);
+        printf("Ptr6 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n", ptr6, (long int)ptr6);
+        ptr6 = realloc(ptr6, 17);
+        printf("Ptr6 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n\n", ptr6, (long int)ptr6);
+        char *ptr7 = NULL;
+        ptr7 = (char *) malloc(10);
+        strcpy(ptr7, "XXXXXXXXX");
+        printf("Ptr7 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr7, (long int)ptr7);
+        ptr7 = realloc(ptr7, 0);
+        printf("Ptr7 result after use LIBC realloc:  |%s|   \t   Pointer address|%lu|\n", ptr7, (long int)ptr7);
+        char *ptr8 = NULL;
+        ptr8 = (char *) malloc(10);
+        strcpy(ptr8, "XXXXXXXXX");
+        printf("Ptr8 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n", ptr8, (long int)ptr8);
+        ptr8 = mx_realloc(ptr8, 0);
+        printf("Ptr8 result after use MY mx_realloc: |%s|   \t   Pointer address|%lu|\n\n", ptr8, (long int)ptr8);
+        char *ptr9 = NULL;
+        ptr9 = (char *) malloc(10);
+        strcpy(ptr9, "123456789");
+        printf("Ptr9 result after use LIBC realloc:   |%s|  Pointer address|%lu|\n", ptr9, (long int)ptr9);
+        ptr9 = realloc(ptr9, -1);
+        printf("Ptr9 result after use LIBC realloc:   |%s|     Pointer address|%lu|\n", ptr9, (long int)ptr9);
+        char *ptr10 = NULL;
+        ptr10 = (char *) malloc(10);
+        strcpy(ptr10, "123456789");
+        printf("Ptr10 result after use MY mx_realloc: |%s|  Pointer address|%lu|\n", ptr10, (long int)ptr10);
+        ptr10 = mx_realloc(ptr10, -1);
+        printf("Ptr10 result after use MY mx_realloc: |%s|     Pointer address|%lu|\n\n", ptr10, (long int)ptr10);
+
+
 
     // mx_printstr(" *************************************\n *\t\tLIST PACK\t     *\n *************************************\n\n");
     // mx_printstr("\n----------------MX_CREATE_NODE-------------------\n");
