@@ -7,6 +7,7 @@
 //     return a > b ? true : false;
 // }
 
+
 int main(/*int argc, char *argv[]*/) {
     // mx_printstr(" **********************\n *\tUTILS PACK    *\n **********************\n\n");
     // mx_printstr("----------------MX_PRINTCHAR-------------------\n");
@@ -48,11 +49,11 @@ int main(/*int argc, char *argv[]*/) {
     //     mx_printstr("mx_sqrt 625 is 25? | "); mx_printint(mx_sqrt(625)); mx_printstr("\n");
     //     mx_printstr("mx_sqrt 2147395600 is 46340? | "); mx_printint(mx_sqrt(2147395600)); mx_printstr("\n");
 
-    mx_printstr("\n\n----------------MX_NBR_TO_HEX-------------------\n");
-        char *hex1 = mx_nbr_to_hex(52);
-        char *hex2 = mx_nbr_to_hex(1000);
-        mx_printstr("mx_nbr_to_hex of 52 is 34? | "); mx_printstr(hex1); mx_printstr("\n");
-        mx_printstr("mx_nbr_to_hex of 1000 is 3e8? | "); mx_printstr(hex2); mx_printstr("\n");
+    // mx_printstr("\n\n----------------MX_NBR_TO_HEX-------------------\n");
+    //     char *hex1 = mx_nbr_to_hex(52);
+    //     char *hex2 = mx_nbr_to_hex(1000);
+    //     mx_printstr("mx_nbr_to_hex of 52 is 34? | "); mx_printstr(hex1); mx_printstr("\n");
+    //     mx_printstr("mx_nbr_to_hex of 1000 is 3e8? | "); mx_printstr(hex2); mx_printstr("\n");
 
 
     // mx_printstr("\n\n----------------MX_HEX_TO_NBR-------------------\n");
@@ -155,9 +156,15 @@ int main(/*int argc, char *argv[]*/) {
     //     char *strdup1 = mx_strdup("12345679");
     //     mx_printstr("mx_strdup returns \"123456789\"? | "); mx_printstr(strdup1); mx_printstr("\n");
 
-    // mx_printstr("\n\n----------------MX_STRNDUP-------------------\n");
-    //     char *strndup_v = mx_strndup("hello", 6);
-    //     mx_printstr("mx_strndup returns \"hello\"? | "); mx_printstr(strndup_v); mx_printstr("\n");
+    mx_printstr("\n\n----------------MX_STRNDUP-------------------\n");
+        char *strndup_v = mx_strndup("hello", 6);
+        mx_printstr("mx_strndup returns \"hello\"? | "); mx_printstr(strndup_v); mx_printstr("\n");
+
+        char *strndup_v1 = mx_strndup("hello", 2);
+        mx_printstr("mx_strndup returns \"hello\"? | "); mx_printstr(strndup_v1); mx_printstr("\n");
+
+        char *strndup_v2 = mx_strndup("hello", 10);
+        mx_printstr("mx_strndup returns \"hello\"? | "); mx_printstr(strndup_v2); mx_printstr("\n");
 
     // mx_printstr("\n\n----------------MX_STRCPY-------------------\n");
     //     const char *strcpy = "123456789"; char dstcpy[15];
@@ -165,7 +172,7 @@ int main(/*int argc, char *argv[]*/) {
 
     // mx_printstr("\n\n----------------MX_STRNCPY-------------------\n");
     //     const char *strncpy = "123456789"; char dstncpy[15];
-    //     mx_printstr("mx_strncpy returns \"12345\"? | "); mx_printstr(mx_strncpy(dstncpy, strncpy, 5)); mx_printstr("\n");
+    //     mx_printstr("mtrncpy returns \"12345\"? | "); mx_printstr(mx_strncpy(dstncpy, strncpy, 5)); mx_printstr("\n");
 
     // mx_printstr("\n\n----------------MX_STRCMP-------------------\n");
     //     char *strcmp1 = "aaaaaaa"; char *strcmp2 = "aaaaaaaA"; char *strcmp3 = "aaaaaaa";
@@ -257,8 +264,38 @@ int main(/*int argc, char *argv[]*/) {
     //         mx_printstr(file_to_str);
     //     }
 
-    // mx_printstr("\n\n----------------MX_READ_LINE-------------------\n"); // CORRECT IT !!!!!!
-
+    mx_printstr("\n\n----------------MX_READ_LINE-------------------\n"); // CORRECT IT !!!!!!
+        int fd = open("fragment", O_RDONLY);
+        // int fd = -1;
+        char *lineptr1 = NULL;
+        int res1;
+        res1 = mx_read_line(&lineptr1, 20, 'f', fd);
+        printf("\nres1 = %d\nlineptr1 = %s|\n\n", res1, lineptr1);
+        printf("==============================================\n");
+        char *lineptr2 = NULL;
+        int res2;
+        res2 = mx_read_line(&lineptr2, 35, 't', fd);
+        printf("\nres2 = %d\nlineptr2 = %s|\n\n", res2, lineptr2);
+        printf("==============================================\n");
+        char *lineptr3 = NULL;
+        int res3;
+        res3 = mx_read_line(&lineptr3, 4, '.', fd);
+        printf("\nres3 = %d\nlineptr3 = %s|\n\n", res3, lineptr3);
+        printf("==============================================\n");
+        char *lineptr4 = NULL;
+        int res4;
+        // printf("\nlineptr4 = %s|\n\n", lineptr4);
+        res4 = mx_read_line(&lineptr4, 4, '5', fd);
+        printf("\nres4 = %d\nlineptr4 = %s|\n\n", res4, lineptr4);
+        printf("==============================================\n");
+        char *lineptr5 = NULL;
+        int res5;
+        res5 = mx_read_line(&lineptr5, 4, 'a', fd);
+        printf("\nres5 = %d\nlineptr5 = %s|\n\n", res5, lineptr5);
+        printf("==============================================\n");
+        close(fd);
+        system("leaks -q a.out");
+        mx_printstr("\n");
 
     // mx_printstr("\n\n----------------MX_REPLACE_SUBSTR-------------------\n");
     //     char replace_substr1[] = "McDonalds";
@@ -289,7 +326,7 @@ int main(/*int argc, char *argv[]*/) {
 
     // mx_printstr(" *************************************\n *\t      MEMORY PACK\t     *\n *************************************\n\n");
 
-    mx_printstr(" *************************************\n *\t      MEMORY PACK\t     *\n *************************************\n");
+    // mx_printstr(" *************************************\n *\t      MEMORY PACK\t     *\n *************************************\n");
     // mx_printstr("\n----------------MX_MEMSET-------------------\n");
     //     char memset1[13]= "1234567890";
     //     char memset2[13]= "1234567890";
@@ -396,67 +433,67 @@ int main(/*int argc, char *argv[]*/) {
     //     mx_memmove(dest6, src6,0);
     //     printf("mx_memmove return |%s|\n", dest6);
 
-    mx_printstr("\n----------------MX_REALLOC-------------------\n");
-        char *ptr1 = NULL;
-        ptr1 = (char *) malloc(17);
-        strcpy(ptr1, "This is 16 chars");
-        printf("Ptr1 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr1, (long int)ptr1);
-        ptr1 = realloc(ptr1, 10);
-        printf("Ptr1 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr1, (long int)ptr1);
-        char *ptr2 = NULL;
-        ptr2 = (char *) malloc(17);
-        strcpy(ptr2, "This is 16 chars");
-        printf("Ptr2 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n", ptr2, (long int)ptr2);
-        ptr2 = mx_realloc(ptr2, 10);
-        printf("Ptr2 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n\n", ptr2, (long int)ptr2);
-        char *ptr3 = NULL;
-        ptr3 = (char *) malloc(10);
-        strcpy(ptr3, "123456789");
-        printf("Ptr3 result after use LIBC realloc:  |%s| \t\t\t    Pointer address|%lu|\n", ptr3, (long int)ptr3);
-        ptr3 = realloc(ptr3, 34);
-        mx_strcat(ptr3, "+Added 25 more characters");
-        printf("Ptr3 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr3, (long int)ptr3);
-        char *ptr4 = NULL;
-        ptr4 = (char *) malloc(10);
-        strcpy(ptr4, "123456789");
-        printf("Ptr4 result after use MY mx_realloc: |%s| \t\t\t    Pointer address|%lu|\n", ptr4, (long int)ptr4);
-        ptr4 = mx_realloc(ptr4, 34);
-        mx_strcat(ptr4, "+Added 25 more characters");
-        printf("Ptr4 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n\n", ptr4, (long int)ptr4);
-        char *ptr5 = NULL;
-        ptr5 = (char *) malloc(10);
-        printf("Ptr5 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr5, (long int)ptr5);
-        ptr5 = realloc(ptr5, 17);
-        printf("Ptr5 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr5, (long int)ptr5);
-        char *ptr6 = NULL;
-        ptr6 = (char *) malloc(10);
-        printf("Ptr6 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n", ptr6, (long int)ptr6);
-        ptr6 = realloc(ptr6, 17);
-        printf("Ptr6 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n\n", ptr6, (long int)ptr6);
-        char *ptr7 = NULL;
-        ptr7 = (char *) malloc(10);
-        strcpy(ptr7, "XXXXXXXXX");
-        printf("Ptr7 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr7, (long int)ptr7);
-        ptr7 = realloc(ptr7, 0);
-        printf("Ptr7 result after use LIBC realloc:  |%s|   \t   Pointer address|%lu|\n", ptr7, (long int)ptr7);
-        char *ptr8 = NULL;
-        ptr8 = (char *) malloc(10);
-        strcpy(ptr8, "XXXXXXXXX");
-        printf("Ptr8 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n", ptr8, (long int)ptr8);
-        ptr8 = mx_realloc(ptr8, 0);
-        printf("Ptr8 result after use MY mx_realloc: |%s|   \t   Pointer address|%lu|\n\n", ptr8, (long int)ptr8);
-        char *ptr9 = NULL;
-        ptr9 = (char *) malloc(10);
-        strcpy(ptr9, "123456789");
-        printf("Ptr9 result after use LIBC realloc:   |%s|  Pointer address|%lu|\n", ptr9, (long int)ptr9);
-        ptr9 = realloc(ptr9, -1);
-        printf("Ptr9 result after use LIBC realloc:   |%s|     Pointer address|%lu|\n", ptr9, (long int)ptr9);
-        char *ptr10 = NULL;
-        ptr10 = (char *) malloc(10);
-        strcpy(ptr10, "123456789");
-        printf("Ptr10 result after use MY mx_realloc: |%s|  Pointer address|%lu|\n", ptr10, (long int)ptr10);
-        ptr10 = mx_realloc(ptr10, -1);
-        printf("Ptr10 result after use MY mx_realloc: |%s|     Pointer address|%lu|\n\n", ptr10, (long int)ptr10);
+    // mx_printstr("\n----------------MX_REALLOC-------------------\n");
+    //     char *ptr1 = NULL;
+    //     ptr1 = (char *) malloc(17);
+    //     strcpy(ptr1, "This is 16 chars");
+    //     printf("Ptr1 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr1, (long int)ptr1);
+    //     ptr1 = realloc(ptr1, 10);
+    //     printf("Ptr1 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr1, (long int)ptr1);
+    //     char *ptr2 = NULL;
+    //     ptr2 = (char *) malloc(17);
+    //     strcpy(ptr2, "This is 16 chars");
+    //     printf("Ptr2 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n", ptr2, (long int)ptr2);
+    //     ptr2 = mx_realloc(ptr2, 10);
+    //     printf("Ptr2 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n\n", ptr2, (long int)ptr2);
+    //     char *ptr3 = NULL;
+    //     ptr3 = (char *) malloc(10);
+    //     strcpy(ptr3, "123456789");
+    //     printf("Ptr3 result after use LIBC realloc:  |%s| \t\t\t    Pointer address|%lu|\n", ptr3, (long int)ptr3);
+    //     ptr3 = realloc(ptr3, 34);
+    //     mx_strcat(ptr3, "+Added 25 more characters");
+    //     printf("Ptr3 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr3, (long int)ptr3);
+    //     char *ptr4 = NULL;
+    //     ptr4 = (char *) malloc(10);
+    //     strcpy(ptr4, "123456789");
+    //     printf("Ptr4 result after use MY mx_realloc: |%s| \t\t\t    Pointer address|%lu|\n", ptr4, (long int)ptr4);
+    //     ptr4 = mx_realloc(ptr4, 34);
+    //     mx_strcat(ptr4, "+Added 25 more characters");
+    //     printf("Ptr4 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n\n", ptr4, (long int)ptr4);
+    //     char *ptr5 = NULL;
+    //     ptr5 = (char *) malloc(10);
+    //     printf("Ptr5 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr5, (long int)ptr5);
+    //     ptr5 = realloc(ptr5, 17);
+    //     printf("Ptr5 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr5, (long int)ptr5);
+    //     char *ptr6 = NULL;
+    //     ptr6 = (char *) malloc(10);
+    //     printf("Ptr6 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n", ptr6, (long int)ptr6);
+    //     ptr6 = realloc(ptr6, 17);
+    //     printf("Ptr6 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n\n", ptr6, (long int)ptr6);
+    //     char *ptr7 = NULL;
+    //     ptr7 = (char *) malloc(10);
+    //     strcpy(ptr7, "XXXXXXXXX");
+    //     printf("Ptr7 result after use LIBC realloc:  |%s|   Pointer address|%lu|\n", ptr7, (long int)ptr7);
+    //     ptr7 = realloc(ptr7, 0);
+    //     printf("Ptr7 result after use LIBC realloc:  |%s|   \t   Pointer address|%lu|\n", ptr7, (long int)ptr7);
+    //     char *ptr8 = NULL;
+    //     ptr8 = (char *) malloc(10);
+    //     strcpy(ptr8, "XXXXXXXXX");
+    //     printf("Ptr8 result after use MY mx_realloc: |%s|   Pointer address|%lu|\n", ptr8, (long int)ptr8);
+    //     ptr8 = mx_realloc(ptr8, 0);
+    //     printf("Ptr8 result after use MY mx_realloc: |%s|   \t   Pointer address|%lu|\n\n", ptr8, (long int)ptr8);
+    //     char *ptr9 = NULL;
+    //     ptr9 = (char *) malloc(10);
+    //     strcpy(ptr9, "123456789");
+    //     printf("Ptr9 result after use LIBC realloc:   |%s|  Pointer address|%lu|\n", ptr9, (long int)ptr9);
+    //     ptr9 = realloc(ptr9, -1);
+    //     printf("Ptr9 result after use LIBC realloc:   |%s|     Pointer address|%lu|\n", ptr9, (long int)ptr9);
+    //     char *ptr10 = NULL;
+    //     ptr10 = (char *) malloc(10);
+    //     strcpy(ptr10, "123456789");
+    //     printf("Ptr10 result after use MY mx_realloc: |%s|  Pointer address|%lu|\n", ptr10, (long int)ptr10);
+    //     ptr10 = mx_realloc(ptr10, -1);
+    //     printf("Ptr10 result after use MY mx_realloc: |%s|     Pointer address|%lu|\n\n", ptr10, (long int)ptr10);
 
 
 

@@ -7,6 +7,5 @@ int mx_pop_size(t_list **list) {
     if (*list != NULL)
         for (; temp != NULL; size++) 
             temp = temp->next;
-            
     return size;
 }

@@ -39,10 +39,6 @@ uninstall: clean
 	@$(RM) $(NAME)
 	@$(RM) $(NAMEBIN)
 	@@printf "$(NAME)\t \033[31;1muninstalled\033[0m\n"
-run: all
-	$(CC) $(CFLAGS) -I $(INC_DIR) $(NAME) main.c
-	$(RM) a.out.*
-	./a.out
 
 reinstall: uninstall all
 

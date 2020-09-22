@@ -12,14 +12,25 @@ typedef struct s_list {
     struct s_list *next;
 }              t_list;
 
-void mx_printchar(char c);
+typedef struct read_line {
+    char *buf;
+    int flag;
+    int index;
+    char delim;
+    int fd;
+    int chars;
+    int sum;
+    size_t k;
+    size_t j;
+}              r_line;
 
+void mx_printchar(char c);
+void mx_print_unicode(wchar_t c);
 void mx_printstr(const char *s);
 void mx_print_strarr(char **arr, const char *delim);
 void mx_printint(int n);
 double mx_pow(double n, unsigned int pow);
 int mx_sqrt(int x);
-
 char *mx_nbr_to_hex(unsigned long ngr);
 unsigned long mx_hex_to_nbr(const char *hex);
 char *mx_itoa(int number);
@@ -46,10 +57,10 @@ int mx_count_words(const char *str, char c);
 char *mx_strnew(const int size);
 char *mx_strtrim(const char *str);
 char *mx_del_extra_spaces(const char *str);
-// char **mx_strsplit(const char *s, char c);
+char **mx_strsplit(const char *s, char c);
 char *mx_strjoin(const char *s1, const char *s2);
 char *mx_file_to_str(const char *file);
-// int mx_read_line(char **lineptr, size_t buf_size, char delim, const int fd);
+int mx_read_line(char **lineptr, size_t buf_size, char delim, const int fd);
 char *mx_replace_substr(const char *str, const char *sub, const char *replace);
 void *mx_memset(void *b, int c, size_t len);
 void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n);
