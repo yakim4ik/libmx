@@ -38,6 +38,7 @@ clean:
 uninstall: clean
 	@$(RM) $(NAME)
 	@$(RM) $(NAMEBIN)
+	@make -sC libmx $@
 	@@printf "$(NAME)\t \033[31;1muninstalled\033[0m\n"
 
 reinstall: uninstall all

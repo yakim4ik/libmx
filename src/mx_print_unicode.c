@@ -1,11 +1,11 @@
+  
 #include "libmx.h"
 
 void mx_print_unicode(wchar_t c) {
     int dc[5] = {0};
     int index = 0;
 
-    if (c < 128)
-        mx_printchar(c);
+    c < 128 ? write(1, &c, 1) : c;
     if (c >= 128 && c <= 1112064) {
         c >= 2048 ? c >= 65536 ? (index = 3, dc[0] = 240)
                                : (index = 2, dc[0] = 224)
@@ -16,6 +16,6 @@ void mx_print_unicode(wchar_t c) {
             dc[index] += c % 2 * mx_pow(2, (i++));
         }
         for (int i = 0; dc[i] != 0; i++)
-            mx_printchar(dc[i]);
+            write(1, &dc[i], 1);
     }
 }

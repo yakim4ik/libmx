@@ -5,6 +5,11 @@ char *mx_nbr_to_hex(unsigned long ngr) {
     char *result = NULL;
     unsigned long temp;
 
+    if (ngr == 0){
+        result = mx_strnew(1);
+        result[0] = '0';
+        return result;
+    }
     for(temp = ngr; temp > 0; temp /= 16)
         count++;
     result = mx_strnew(count);
